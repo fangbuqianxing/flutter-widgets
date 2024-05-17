@@ -4488,28 +4488,34 @@ class SfPdfViewerState extends State<SfPdfViewer> with WidgetsBindingObserver {
     _textSelectionOverlayEntry ??= OverlayEntry(
       maintainState: true,
       builder: (BuildContext context) {
-        return MyTextSelectionToolbar(primaryAnchor: _contextMenuPosition, onCopy: () {
-          Clipboard.setData(
-            ClipboardData(
-                text: _pdfPagesKey[_selectedTextPageNumber]
-                    ?.currentState
-                    ?.canvasRenderBox!
-                    .getSelectionDetails()
-                    .copiedText ??
-                    ''),
-          );
-          _pdfViewerController.clearSelection();
-        }, onQuote: () {
-          final String text = _pdfPagesKey[_selectedTextPageNumber]
-              ?.currentState
-              ?.canvasRenderBox!
-              .getSelectionDetails()
-              .copiedText ??
-              '';
-          widget.onQuote?.call(text);
-          _pdfViewerController.clearSelection();
-          return;
-        },);
+        return Positioned(
+          top: _contextMenuPosition.dy,
+          left: _contextMenuPosition.dx,
+          width: 120,
+          height: 80,
+          child: MyTextSelectionToolbar(primaryAnchor: Offset.zero, onCopy: () {
+            Clipboard.setData(
+              ClipboardData(
+                  text: _pdfPagesKey[_selectedTextPageNumber]
+                      ?.currentState
+                      ?.canvasRenderBox!
+                      .getSelectionDetails()
+                      .copiedText ??
+                      ''),
+            );
+            _pdfViewerController.clearSelection();
+          }, onQuote: () {
+            final String text = _pdfPagesKey[_selectedTextPageNumber]
+                ?.currentState
+                ?.canvasRenderBox!
+                .getSelectionDetails()
+                .copiedText ??
+                '';
+            widget.onQuote?.call(text);
+            _pdfViewerController.clearSelection();
+            return;
+          },),
+        );
 
         return Positioned(
           top: _contextMenuPosition.dy,
