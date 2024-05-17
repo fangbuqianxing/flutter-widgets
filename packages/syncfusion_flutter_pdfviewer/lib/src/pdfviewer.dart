@@ -45,6 +45,7 @@ import 'control/pdftextline.dart';
 import 'control/pdfviewer_callback_details.dart';
 import 'control/single_page_view.dart';
 import 'control/text_selection_menu.dart';
+import 'control/text_selection_toolbar.dart';
 import 'form_fields/pdf_checkbox.dart';
 import 'form_fields/pdf_combo_box.dart';
 import 'form_fields/pdf_form_field.dart';
@@ -166,6 +167,7 @@ class SfPdfViewer extends StatefulWidget {
     this.enableDoubleTapZooming = true,
     this.enableTextSelection = true,
     this.onTextSelectionChanged,
+    this.onQuote,
     this.onHyperlinkClicked,
     this.onDocumentLoadFailed,
     this.onTap,
@@ -234,6 +236,7 @@ class SfPdfViewer extends StatefulWidget {
     this.enableDoubleTapZooming = true,
     this.enableTextSelection = true,
     this.onTextSelectionChanged,
+    this.onQuote,
     this.onHyperlinkClicked,
     this.onDocumentLoaded,
     this.onDocumentLoadFailed,
@@ -301,6 +304,7 @@ class SfPdfViewer extends StatefulWidget {
     this.enableDoubleTapZooming = true,
     this.enableTextSelection = true,
     this.onTextSelectionChanged,
+    this.onQuote,
     this.onHyperlinkClicked,
     this.onDocumentLoaded,
     this.onDocumentLoadFailed,
@@ -372,6 +376,7 @@ class SfPdfViewer extends StatefulWidget {
     this.enableDoubleTapZooming = true,
     this.enableTextSelection = true,
     this.onTextSelectionChanged,
+    this.onQuote,
     this.onHyperlinkClicked,
     this.onDocumentLoaded,
     this.onDocumentLoadFailed,
@@ -862,6 +867,9 @@ class SfPdfViewer extends StatefulWidget {
   /// }
   /// ```
   final PdfTextSelectionChangedCallback? onTextSelectionChanged;
+
+  /// Called when an item is quote
+  final void Function(String)? onQuote;
 
   ///Called when the hyperlink is tapped in [SfPdfViewer].
   ///
@@ -4480,6 +4488,29 @@ class SfPdfViewerState extends State<SfPdfViewer> with WidgetsBindingObserver {
     _textSelectionOverlayEntry ??= OverlayEntry(
       maintainState: true,
       builder: (BuildContext context) {
+        return MyTextSelectionToolbar(primaryAnchor: _contextMenuPosition, onCopy: () {
+          Clipboard.setData(
+            ClipboardData(
+                text: _pdfPagesKey[_selectedTextPageNumber]
+                    ?.currentState
+                    ?.canvasRenderBox!
+                    .getSelectionDetails()
+                    .copiedText ??
+                    ''),
+          );
+          _pdfViewerController.clearSelection();
+        }, onQuote: () {
+          final String text = _pdfPagesKey[_selectedTextPageNumber]
+              ?.currentState
+              ?.canvasRenderBox!
+              .getSelectionDetails()
+              .copiedText ??
+              '';
+          widget.onQuote?.call(text);
+          _pdfViewerController.clearSelection();
+          return;
+        },);
+
         return Positioned(
           top: _contextMenuPosition.dy,
           left: _contextMenuPosition.dx,
