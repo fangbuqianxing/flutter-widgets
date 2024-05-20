@@ -4491,7 +4491,7 @@ class SfPdfViewerState extends State<SfPdfViewer> with WidgetsBindingObserver {
         return Positioned(
           top: _contextMenuPosition.dy,
           left: _contextMenuPosition.dx,
-          width: 120,
+          width: 222,
           height: 80,
           child: MyTextSelectionToolbar(primaryAnchor: Offset.zero, onCopy: () {
             Clipboard.setData(
