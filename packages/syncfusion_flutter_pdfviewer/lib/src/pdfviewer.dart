@@ -4392,7 +4392,7 @@ class SfPdfViewerState extends State<SfPdfViewer> with WidgetsBindingObserver {
         max(distanceFromBottom, distanceFromRight));
 
     if (largestDistance == distanceFromTop &&
-        ((kTextSelectionMenuHeight + kTextSelectionMenuMargin) /
+        ((myTextSelectionMenuHeight + kTextSelectionMenuMargin) /
                 _pdfViewerController.zoomLevel) <=
             distanceFromTop) {
       return TextSelectionMenuLocation.top;
@@ -4402,7 +4402,7 @@ class SfPdfViewerState extends State<SfPdfViewer> with WidgetsBindingObserver {
             distanceFromLeft) {
       return TextSelectionMenuLocation.left;
     } else if (largestDistance == distanceFromBottom &&
-        ((kTextSelectionMenuHeight + kTextSelectionMenuMargin) /
+        ((myTextSelectionMenuHeight + kTextSelectionMenuMargin) /
                 _pdfViewerController.zoomLevel) <=
             distanceFromBottom) {
       return TextSelectionMenuLocation.bottom;
@@ -4425,18 +4425,18 @@ class SfPdfViewerState extends State<SfPdfViewer> with WidgetsBindingObserver {
             _textSelectionRegion.left -
                 kTextSelectionMenuWidth -
                 kTextSelectionMenuMargin,
-            _textSelectionRegion.centerLeft.dy - kTextSelectionMenuHeight / 2);
+            _textSelectionRegion.centerLeft.dy - myTextSelectionMenuHeight / 2);
         break;
       case TextSelectionMenuLocation.right:
         localPosition = Offset(
             _textSelectionRegion.right + kTextSelectionMenuMargin,
-            _textSelectionRegion.centerRight.dy - kTextSelectionMenuHeight / 2);
+            _textSelectionRegion.centerRight.dy - myTextSelectionMenuHeight / 2);
         break;
       case TextSelectionMenuLocation.top:
         localPosition = Offset(
             _textSelectionRegion.topCenter.dx - kTextSelectionMenuWidth / 2,
             _textSelectionRegion.top -
-                kTextSelectionMenuHeight -
+                myTextSelectionMenuHeight -
                 kTextSelectionMenuMargin);
         break;
       case TextSelectionMenuLocation.bottom:
@@ -4447,7 +4447,7 @@ class SfPdfViewerState extends State<SfPdfViewer> with WidgetsBindingObserver {
       case TextSelectionMenuLocation.center:
         localPosition = Offset(
             _textSelectionRegion.center.dx - kTextSelectionMenuWidth / 2,
-            _textSelectionRegion.center.dy - kTextSelectionMenuHeight / 2);
+            _textSelectionRegion.center.dy - myTextSelectionMenuHeight / 2);
         break;
     }
     if (localPosition != Offset.zero) {
@@ -4455,13 +4455,13 @@ class SfPdfViewerState extends State<SfPdfViewer> with WidgetsBindingObserver {
           _viewportGlobalRect!.top + kTextSelectionMenuMargin) {
         localPosition = Offset(localPosition.dx,
             _viewportGlobalRect!.top + kTextSelectionMenuMargin);
-      } else if (localPosition.dy + kTextSelectionMenuHeight >
+      } else if (localPosition.dy + myTextSelectionMenuHeight >
           _viewportGlobalRect!.bottom - kTextSelectionMenuMargin) {
         localPosition = Offset(
             localPosition.dx,
             _viewportGlobalRect!.bottom -
                 kTextSelectionMenuMargin -
-                kTextSelectionMenuHeight);
+                myTextSelectionMenuHeight);
       }
 
       if (localPosition.dx <
@@ -4481,7 +4481,7 @@ class SfPdfViewerState extends State<SfPdfViewer> with WidgetsBindingObserver {
       _contextMenuPosition = localPosition;
     }
   }
-
+  final double myTextSelectionMenuHeight = 80.0;
   /// Inserts the text selection menu into the overlay.
   void _showTextSelectionMenu() {
     _hideTextSelectionMenu();
@@ -4491,8 +4491,8 @@ class SfPdfViewerState extends State<SfPdfViewer> with WidgetsBindingObserver {
         return Positioned(
           top: _contextMenuPosition.dy,
           left: _contextMenuPosition.dx,
-          width: 222,
-          height: 80,
+          width: kTextSelectionMenuWidth,
+          height: myTextSelectionMenuHeight,
           child: MyTextSelectionToolbar(primaryAnchor: Offset.zero, onCopy: () {
             Clipboard.setData(
               ClipboardData(
