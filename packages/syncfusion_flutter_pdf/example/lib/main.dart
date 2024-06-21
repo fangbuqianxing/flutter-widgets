@@ -74,6 +74,33 @@ class _CreatePdfState extends State<CreatePdfStatefulWidget> {
     drawGrid(page, grid, result);
     //Add invoice footer
     drawFooter(page, pageSize);
+
+    // Create a new PDF text element class and draw the flow layout text.
+    final PdfLayoutResult layoutResult = PdfTextElement(
+        text: "qwwwwwww",
+        font: PdfStandardFont(PdfFontFamily.helvetica, 12),
+        brush: PdfSolidBrush(PdfColor(0, 0, 0)))
+        .draw(
+        page: page,
+        bounds: Rect.fromLTWH(
+            0, 0, page.getClientSize().width, page.getClientSize().height),
+        format: PdfLayoutFormat(layoutType: PdfLayoutType.paginate))!;
+
+    layoutResult.page.graphics;
+
+    //Add page to the PDF
+    final PdfPage page2 = document.pages.add();
+    //Get page client size
+    final Size pageSize2 = page.getClientSize();
+    page2.graphics.drawString("File does not exist, MIME-type of lookup file failed. File does not exist, MIME-type of lookup file failed. File does not exist, MIME-type of lookup file failed. File does not exist, MIME-type of lookup file failed. ",
+        PdfStandardFont(PdfFontFamily.courier, 16),
+        bounds: Rect.fromLTWH(0, 0, pageSize2.width, pageSize2.height),
+        brush: PdfBrushes.teal,
+        format: PdfStringFormat(
+            alignment: PdfTextAlignment.left,
+            lineAlignment: PdfVerticalAlignment.top));
+
+
     //Save the PDF document
     final List<int> bytes = document.saveSync();
     //Dispose the document.
