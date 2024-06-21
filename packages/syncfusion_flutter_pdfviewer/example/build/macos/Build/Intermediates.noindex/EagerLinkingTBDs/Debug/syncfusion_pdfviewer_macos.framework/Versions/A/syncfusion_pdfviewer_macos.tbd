@@ -1,0 +1,84 @@
+{
+  "main_library": {
+    "exported_symbols": [
+      {
+        "data": {
+          "global": [
+            "_$s26syncfusion_pdfviewer_macos32SyncfusionFlutterPdfViewerPluginC13closeDocument33_3EFBA66A215BD997E12DDF4622E01BC0LL4call6resultySo0E10MethodCallC_yypSgctF",
+            "_$sSo16NSBitmapImageRepC26syncfusion_pdfviewer_macosE3png10Foundation4DataVSgvg",
+            "_$s26syncfusion_pdfviewer_macos32SyncfusionFlutterPdfViewerPluginC12documentRepoSDySSSo16CGPDFDocumentRefaSgGvsTq",
+            "_$s26syncfusion_pdfviewer_macos32SyncfusionFlutterPdfViewerPluginC13getPagesWidth33_3EFBA66A215BD997E12DDF4622E01BC0LL4call6resultySo0E10MethodCallC_yypSgctF",
+            "_$s26syncfusion_pdfviewer_macos32SyncfusionFlutterPdfViewerPluginC8getImage33_3EFBA66A215BD997E12DDF4622E01BC0LL4call6resultySo0E10MethodCallC_yypSgctF",
+            "_$s26syncfusion_pdfviewer_macos32SyncfusionFlutterPdfViewerPluginC8register4withySo0eH9Registrar_p_tFZ",
+            "_$s26syncfusion_pdfviewer_macos32SyncfusionFlutterPdfViewerPluginC015getTileImageForH033_3EFBA66A215BD997E12DDF4622E01BC0LL10pageNumber5scale5width6height1x1y10documentIDSo0E17StandardTypedDataCSgSi_12CoreGraphics7CGFloatVS4dSStF",
+            "_$s26syncfusion_pdfviewer_macos32SyncfusionFlutterPdfViewerPluginC14getPagesHeight33_3EFBA66A215BD997E12DDF4622E01BC0LL4call6resultySo0E10MethodCallC_yypSgctF",
+            "_$s26syncfusion_pdfviewer_macos32SyncfusionFlutterPdfViewerPluginCN",
+            "_$s26syncfusion_pdfviewer_macos32SyncfusionFlutterPdfViewerPluginC12documentRepoSDySSSo16CGPDFDocumentRefaSgGvpfi",
+            "_$s26syncfusion_pdfviewer_macos32SyncfusionFlutterPdfViewerPluginC011getImageForH033_3EFBA66A215BD997E12DDF4622E01BC0LL5index5scale10documentIDSo0E17StandardTypedDataCSgSi_12CoreGraphics7CGFloatVSStF",
+            "_$s26syncfusion_pdfviewer_macos32SyncfusionFlutterPdfViewerPluginC12documentRepoSDySSSo16CGPDFDocumentRefaSgGvpWvd",
+            "_syncfusion_pdfviewer_macosVersionString",
+            "_$s26syncfusion_pdfviewer_macos32SyncfusionFlutterPdfViewerPluginC6handle_6resultySo0E10MethodCallC_yypSgctF",
+            "_Swift50Overrides",
+            "_$s26syncfusion_pdfviewer_macos32SyncfusionFlutterPdfViewerPluginCACycfc",
+            "_$s26syncfusion_pdfviewer_macos32SyncfusionFlutterPdfViewerPluginCfD",
+            "_$s26syncfusion_pdfviewer_macos32SyncfusionFlutterPdfViewerPluginC12documentRepoSDySSSo16CGPDFDocumentRefaSgGvg",
+            "_$s26syncfusion_pdfviewer_macos32SyncfusionFlutterPdfViewerPluginCMn",
+            "_$s10Foundation4DataV26syncfusion_pdfviewer_macosE6bitmapSo16NSBitmapImageRepCSgvpMV",
+            "_$s26syncfusion_pdfviewer_macos32SyncfusionFlutterPdfViewerPluginC010initializeF8Renderer33_3EFBA66A215BD997E12DDF4622E01BC0LL4call6resultySo0E10MethodCallC_yypSgctF",
+            "_Swift51Overrides",
+            "_$s26syncfusion_pdfviewer_macos32SyncfusionFlutterPdfViewerPluginC12documentRepoSDySSSo16CGPDFDocumentRefaSgGvs",
+            "_$s26syncfusion_pdfviewer_macos32SyncfusionFlutterPdfViewerPluginC12documentRepoSDySSSo16CGPDFDocumentRefaSgGvM",
+            "_$s26syncfusion_pdfviewer_macos32SyncfusionFlutterPdfViewerPluginC6handle_6resultySo0E10MethodCallC_yypSgctFTq",
+            "_$sSo7NSImageC26syncfusion_pdfviewer_macosE4size7actionsABSo6CGSizeV_ySo12CGContextRefaXEtcfC",
+            "_$s26syncfusion_pdfviewer_macos32SyncfusionFlutterPdfViewerPluginC12documentRepoSDySSSo16CGPDFDocumentRefaSgGvMTq",
+            "_$s26syncfusion_pdfviewer_macos32SyncfusionFlutterPdfViewerPluginCACycfC",
+            "_$s26syncfusion_pdfviewer_macos32SyncfusionFlutterPdfViewerPluginC12documentRepoSDySSSo16CGPDFDocumentRefaSgGvgTq",
+            "_$sSo16NSBitmapImageRepC26syncfusion_pdfviewer_macosE3png10Foundation4DataVSgvpMV",
+            "_$s10Foundation4DataV26syncfusion_pdfviewer_macosE6bitmapSo16NSBitmapImageRepCSgvg",
+            "_$sSo7NSImageC26syncfusion_pdfviewer_macosE3png10Foundation4DataVSgvpMV",
+            "_$s26syncfusion_pdfviewer_macos32SyncfusionFlutterPdfViewerPluginCMa",
+            "_$sSo7NSImageC26syncfusion_pdfviewer_macosE3png10Foundation4DataVSgvg",
+            "_syncfusion_pdfviewer_macosVersionNumber",
+            "_$s26syncfusion_pdfviewer_macos32SyncfusionFlutterPdfViewerPluginC12getTileImage33_3EFBA66A215BD997E12DDF4622E01BC0LL4call6resultySo0E10MethodCallC_yypSgctF",
+            "_$s26syncfusion_pdfviewer_macos32SyncfusionFlutterPdfViewerPluginC12documentRepoSDySSSo16CGPDFDocumentRefaSgGvpMV"
+          ],
+          "objc_class": [
+            "_TtC26syncfusion_pdfviewer_macos32SyncfusionFlutterPdfViewerPlugin",
+            "PodsDummy_syncfusion_pdfviewer_macos"
+          ]
+        },
+        "text": {
+          "global": [
+            "__ZN5swift34swift50override_conformsToProtocolEPKNS_14TargetMetadataINS_9InProcessEEEPKNS_24TargetProtocolDescriptorIS1_EEPFPKNS_18TargetWitnessTableIS1_EES4_S8_E",
+            "__ZN5swift39swift51override_conformsToSwiftProtocolEPKNS_14TargetMetadataINS_9InProcessEEEPKNS_24TargetProtocolDescriptorIS1_EEN7__swift9__runtime4llvm9StringRefEPFPKNS_35TargetProtocolConformanceDescriptorIS1_EES4_S8_SC_E",
+            "__Z34_swiftoverride_class_getSuperclassPKN5swift14TargetMetadataINS_9InProcessEEE"
+          ]
+        }
+      }
+    ],
+    "flags": [
+      {
+        "attributes": [
+          "not_app_extension_safe"
+        ]
+      }
+    ],
+    "install_names": [
+      {
+        "name": "@rpath/syncfusion_pdfviewer_macos.framework/Versions/A/syncfusion_pdfviewer_macos"
+      }
+    ],
+    "swift_abi": [
+      {
+        "abi": 7
+      }
+    ],
+    "target_info": [
+      {
+        "min_deployment": "10.14",
+        "target": "x86_64-macos"
+      }
+    ]
+  },
+  "tapi_tbd_version": 5
+}
